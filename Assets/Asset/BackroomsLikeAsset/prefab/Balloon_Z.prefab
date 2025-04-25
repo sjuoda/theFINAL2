@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5224590854936177600}
   - component: {fileID: 2429555264920093322}
   - component: {fileID: 6679309040307039186}
+  - component: {fileID: 4880337668159890611}
   m_Layer: 0
   m_Name: Balloon_Z
   m_TagString: Letter
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7201665265540549720}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.89847976, z: -0, w: -0.43901482}
-  m_LocalPosition: {x: 7.370438, y: 1.7, z: 45.34089}
+  m_LocalPosition: {x: 25.3, y: 1.466, z: 14.9}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -149,3 +150,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterValue: Z
+--- !u!114 &4880337668159890611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201665265540549720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b580bd066e4f7dc479f4e20dd1fd496a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: {x: 0, y: 100, z: 0}
+  floatSpeed: 2.5
+  floatHeight: 0.5
