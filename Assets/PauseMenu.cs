@@ -27,8 +27,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-        
-        // 🔥 SHOW the mouse
+
+        // 🔥 Show mouse when paused
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
 
-        // 🔥 HIDE the mouse
+        // 🔥 Hide mouse again during gameplay
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
