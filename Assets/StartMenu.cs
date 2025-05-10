@@ -5,7 +5,7 @@ public class StartMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("lvl2"); // Replace with your Level 1 scene name
+        SceneManager.LoadScene("ObjectivesScene"); // Replace with your Level 1 scene name
     }
 
     public void QuitGame()

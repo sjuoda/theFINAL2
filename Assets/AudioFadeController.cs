@@ -5,6 +5,7 @@ public class AudioFadeController : MonoBehaviour
 {
     public AudioSource audioSource;
     public float fadeDuration = 2f;
+    public float maxVolume = 0.1f;  // Set your desired max volume here
 
     private void Start()
     {
@@ -21,9 +22,12 @@ public class AudioFadeController : MonoBehaviour
         while (elapsed < fadeDuration)
         {
             elapsed += Time.deltaTime;
-            audioSource.volume = Mathf.Clamp01(elapsed / fadeDuration);
+            audioSource.volume = Mathf.Clamp01((elapsed / fadeDuration) * maxVolume);
             yield return null;
         }
+
+        // Ensure final volume is set
+        audioSource.volume = maxVolume;
     }
 
     public IEnumerator FadeOut()

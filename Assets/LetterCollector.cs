@@ -9,21 +9,24 @@ public class LetterCollector : MonoBehaviour
     public DoorOpener door;
 
     public TextMeshProUGUI[] letterTexts; // 4 slots for M, A, Z, E (in that order)
+    public AudioSource pickupSound;  // Add this
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Letter"))
         {
             LetterIdentity letter = other.GetComponent<LetterIdentity>();
-            string pickedLetter = letter.letterValue.ToUpper(); // just in case
+            string pickedLetter = letter.letterValue.ToUpper();
 
-            // Determine correct index based on letter
             int index = GetLetterIndex(pickedLetter);
 
             if (index != -1 && letterTexts[index].text == "")
             {
                 letterTexts[index].text = pickedLetter;
                 lettersCollected++;
+
+                // Play pickup sound
+                pickupSound.Play();
             }
 
             Destroy(other.gameObject);
@@ -36,7 +39,6 @@ public class LetterCollector : MonoBehaviour
         }
     }
 
-    // Helper method to map letters to UI positions
     int GetLetterIndex(string letter)
     {
         switch (letter)
@@ -45,7 +47,7 @@ public class LetterCollector : MonoBehaviour
             case "A": return 1;
             case "Z": return 2;
             case "E": return 3;
-            default: return -1; // Invalid letter
+            default: return -1;
         }
     }
 }
