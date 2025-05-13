@@ -20,10 +20,10 @@ public class MenuMusic : MonoBehaviour
         while (elapsed < fadeDuration)
         {
             elapsed += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(0, 0.02f, elapsed / fadeDuration); // Target volume is 0.5
+            audioSource.volume = Mathf.Lerp(0, 0.05f, elapsed / fadeDuration); // Target volume is 0.5
             yield return null;
         }
 
-        audioSource.volume = 0.02f;
+        audioSource.volume = 0.05f;
     }
 }
